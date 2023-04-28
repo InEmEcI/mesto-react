@@ -1,20 +1,13 @@
-function ImagePopup({ onClose, card }) {
+function ImagePopup({ card, onClose }) {
     return (
-        <figure className={`popup popup__card-image ${card.isOpen && "popup_opened"}`}
-        >
-            <button
-                type="button"
-                className="popup__close"
-                onClick={onClose}
-            ></button>
-            <img
-                className="popup-card-image__photo"
-                src={сard.link}
-                alt={card.name}
-            />
+        <section className={`popup popup-card-image ${card.isOpen && "popup_opened"}`}>
+            <figure className="popup-card-image__figure">
+            <button className="popup__close" type="button"  onClick={onClose}></button>
+            <img src={card.link} alt={card.name} className="popup-card-image__photo" />
             <figcaption className="popup-card-image__figcaption">{card.name}</figcaption>
-        </figure>
+            </figure>
+        </section>
     );
-}
-
-export default ImagePopup;
+  }
+  
+  export default ImagePopup;

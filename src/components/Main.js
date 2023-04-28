@@ -2,9 +2,8 @@ import { useEffect, useState } from 'react';
 import api from '../utils/api';
 import Card from './Card';
 
-
 function Main(props) {
-  
+
   const [userName, setUserName] = useState('');
   const [userDescription, setUserDescription] = useState('');
   const [userAvatar, setUserAvatar] = useState('');
@@ -21,7 +20,7 @@ function Main(props) {
       setCards(data);
     }).catch((error) => console.log(`Ошибка: ${error}`))
 
-  }) 
+  })
 
   return (
     <main>
@@ -51,11 +50,11 @@ function Main(props) {
       <section>
         <ul className="elements">
           {cards.map(
-            (card) => (<Card 
-              key={card._id} 
-              data={card}               
+            (card) => (<Card
+              key={card._id}
+              data={card}
               onCardClick={props.onCardClick}
-              onClose={props.onClose}             
+              onClose={props.onClose}
             />)
           )}
         </ul>
