@@ -14,13 +14,14 @@ function Main(props) {
       setUserName(data.name);
       setUserDescription(data.about);
       setUserAvatar(data.avatar);
-    }).catch((error) => console.log(`Ошибка: ${error}`))
+    })
+    .catch((error) => console.log(`Ошибка: ${error}`))
 
     api.getCards().then((data) => {
       setCards(data);
-    }).catch((error) => console.log(`Ошибка: ${error}`))
-
-  })
+    })
+    .catch((error) => console.log(`Ошибка: ${error}`))
+  },[])
 
   return (
     <main>

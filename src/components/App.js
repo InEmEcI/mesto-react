@@ -54,28 +54,28 @@ function App() {
       >
         <input
           id="name-input"
-          autocomplete="off"
+          autoComplete="off"
           type="text"
           required
           placeholder="Имя"
           name="name"
-          class="popup__input popup__input_name"
-          minlength="2"
-          maxlength="40"
+          className="popup__input popup__input_name"
+          minLength="2"
+          maxLength="40"
         />
-        <span class="popup__input-error name-input-error"></span>
+        <span className="popup__input-error name-input-error"></span>
         <input
           id="about-input"
-          autocomplete="off"
+          autoComplete="off"
           type="text"
           required
           placeholder="Профессия"
           name="about"
-          class="popup__input popup__input_about"
-          minlength="2"
-          maxlength="200"
+          className="popup__input popup__input_about"
+          minLength="2"
+          maxLength="200"
         />
-        <span class="popup__input-error about-input-error"></span>
+        <span className="popup__input-error about-input-error"></span>
       </PopupWithForm>
 
       <PopupWithForm
@@ -87,26 +87,26 @@ function App() {
       >
         <input
           id="place-name-input"
-          autocomplete="off"
+          autoComplete="off"
           type="text"
           required
           name="name"
           placeholder="Название"
-          class="popup__input popup__input_card-name"
-          minlength="2"
-          maxlength="30"
+          className="popup__input popup__input_card-name"
+          minLength="2"
+          maxLength="30"
         />
-        <span class="popup__input-error place-name-input-error"></span>
+        <span className="popup__input-error place-name-input-error"></span>
         <input
           id="photo-link-input"
-          autocomplete="off"
+          autoComplete="off"
           type="url"
           required
           name="link"
           placeholder="Ссылка на картинку"
-          class="popup__input popup__input_photo-link"
+          className="popup__input popup__input_photo-link"
         />
-        <span class="popup__input-error photo-link-input-error"></span>
+        <span className="popup__input-error photo-link-input-error"></span>
       </PopupWithForm>
 
       <PopupWithForm
@@ -118,14 +118,14 @@ function App() {
       >
         <input
           id="avatar-input"
-          autocomplete="off"
+          autoComplete="off"
           type="url"
           required
           name="avatar"
           placeholder="Ссылка на картинку"
-          class="popup__input popup__avatar-input"
+          className="popup__input popup__avatar-input"
         />
-        <span class="popup__input-error avatar-input-error"></span>
+        <span className="popup__input-error avatar-input-error"></span>
       </PopupWithForm>
 
       <ImagePopup card={selectedCard} onClose={allPopupsClose} />
