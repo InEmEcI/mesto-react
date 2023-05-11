@@ -1,37 +1,40 @@
-// import PopupWithForm from "./PopupWithForm";
-// import { useRef } from "react";
+import PopupWithForm from "./PopupWithForm";
+import { useRef, useEffect } from "react";
 
-// function EditAvatarPopup(props) {
-//   const avatarRef = useRef();
+function EditAvatarPopup(props) {
+  const newAvatarRef = useRef();
 
-//   function handleSubmit(e) {
-//     e.preventDefault();
+  function handleSubmit(e) {
+    e.preventDefault();
 
-//     onUpdateAvatar({
-//       /* avatar:  Значение инпута, полученное с помощью рефа */
-//     });
-//   }
-
-//   return (
-//     <PopupWithForm
-//       onSubmit={handleSubmit}
-//       buttonText="Сохранить"
-//       onClose={props.onClose}
-//       isOpen={props.isOpen}
-//       title="Обновить аватар"
-//       name="imgred"
-//     >
-//       <input
-//         ref={avatarRef}
-//         id="img-input"
-//         type="url"
-//         name="newimg"
-//         className="popup__item popup__item_el_img"
-//         placeholder="Ссылка"
-//         required
-//       />
-//       <span className="img-input-error popup__item-error"></span>
-//     </PopupWithForm>
-//   );
-// }
-// export default EditAvatarPopup;
+    props.onUpdateAvatar({
+      avatar: newAvatarRef.current.value,
+    });
+  }
+  useEffect(() => {
+    newAvatarRef.current.value = "";
+  }, [props.isOpen]);
+  return (
+    <PopupWithForm
+      name="avatar"
+      title="Обновить аватар"
+      buttonText="Сохранить"
+      onClose={props.onClose}
+      isOpen={props.isOpen}
+      onSubmit={handleSubmit}
+    >
+      <input
+        ref={newAvatarRef}
+        id="avatar-input"
+        autoComplete="off"
+        type="url"
+        required
+        name="avatar"
+        placeholder="Ссылка на картинку"
+        className="popup__input popup__avatar-input"
+      />
+      <span className="popup__input-error avatar-input-error"></span>
+    </PopupWithForm>
+  );
+}
+export default EditAvatarPopup;

@@ -45,8 +45,8 @@ function Main(props) {
               data={card}
               onCardClick={props.onCardClick}
               onClose={props.onClose}
-              onDeleteClick = {props.onDeleteClick}
-              onLikeClick = {props.onLikeClick}
+              onDeleteClick={props.onDeleteClick}
+              onLikeClick={props.onLikeClick}
             />
           ))}
         </ul>

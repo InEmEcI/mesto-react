@@ -6,11 +6,6 @@ function Card({ data, onCardClick, onLikeClick, onDeleteClick }) {
   // Определяем, являемся ли мы владельцем текущей карточки
   const isOwn = data.owner._id === currentUser._id;
 
-  // Далее в разметке используем переменную для условного рендеринга
-  {
-    isOwn && <button className="element__trash" onClick={handleDeleteClick} />;
-  }
-
   // Определяем, есть ли у карточки лайк, поставленный текущим пользователем
   const isLiked = data.likes.some((i) => i._id === currentUser._id);
 
@@ -40,11 +35,20 @@ function Card({ data, onCardClick, onLikeClick, onDeleteClick }) {
         onClick={handleClick}
       />
       {isOwn && (
-      <button className="element__trash" type="button"></button>)}
+        <button
+          className="element__trash"
+          onClick={handleDeleteClick}
+          type="button"
+        ></button>
+      )}
       <div className="element__title-and-like">
         <h2 className="element__title">{data.name}</h2>
         <div className="element__like-and-counter">
-          <button className="element__like" type="button"></button>
+          <button
+            className={cardLikeButtonClassName}
+            onClick={handleLikeClick}
+            type="button"
+          ></button>
           <span className="element__like-counter">{data.likes.length}</span>
         </div>
       </div>
