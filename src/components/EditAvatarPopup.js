@@ -4,6 +4,10 @@ import { useRef, useEffect } from "react";
 function EditAvatarPopup(props) {
   const newAvatarRef = useRef();
 
+  useEffect(() => {
+    newAvatarRef.current.value = "";
+  }, [props.isOpen]);
+
   function handleSubmit(e) {
     e.preventDefault();
 
@@ -11,9 +15,7 @@ function EditAvatarPopup(props) {
       avatar: newAvatarRef.current.value,
     });
   }
-  useEffect(() => {
-    newAvatarRef.current.value = "";
-  }, [props.isOpen]);
+  
   return (
     <PopupWithForm
       name="avatar"
