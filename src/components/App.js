@@ -13,7 +13,6 @@ function App() {
   const [currentUser, setCurrentUser] = useState({});
   const [cards, setCards] = useState([]);
 
-  
   const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] = useState(false);
   const [isAddPlacePopupOpen, setIsAddPlacePopupOpen] = useState(false);
   const [isEditAvatarPopupOpen, setIsEditAvatarPopupOpen] = useState(false);
@@ -114,7 +113,6 @@ function App() {
       .catch((error) => console.log(`Ошибка: ${error}`));
   }
 
-
   return (
     <CurrentUserContext.Provider value={currentUser}>
       <div className="page">
@@ -132,7 +130,7 @@ function App() {
         <EditProfilePopup
           isOpen={isEditProfilePopupOpen}
           onEditUser={handleUserEdit}
-          onClose={allPopupsClose}          
+          onClose={allPopupsClose}
         />
 
         <EditAvatarPopup
